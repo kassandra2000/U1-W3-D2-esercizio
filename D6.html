@@ -169,16 +169,19 @@
         */
 
       const makeItClickable = function () {
-        const titleNew = title.innerHTML.slice(0, -1);
-        return (title.onclick = (str) => (str.innerHTML = titleNew));
+        title.onclick = () => (title.innerHTML = title.innerHTML.slice(0, -1));
       };
       makeItClickable();
       /* ESERCIZIO 10
          Crea una funzione che, al click sul footer, riveli l'URL del link interno come contenuto di un alert()
         */
 
-      const revealFooterLink = function () {};
-
+      const revealFooterLink = function () {
+        const footer=document.querySelector("footer")
+        const hrefFooter= document.querySelector("footer a ")
+        footer.onclick= () => (alert(hrefFooter) )
+      };
+      revealFooterLink()
       /* ESERCIZIO 11
          Crea una funzione che crei una tabella nell'elemento con id "tableArea".
          La tabella avrà 5 elementi e questa struttura: immagine, nome prodotto, quantità, prezzo
@@ -202,16 +205,16 @@
         Crea una funzione che cambi il colore del h2 con id "changeMyColor" con un colore random ad ogni click ricevuto
       */
 
-      const changeColorWithRandom = function () {
-        let randomColor = Math.floor(Math.random() * 16777215).toString(16);
-        const h2 = document.querySelector("h2");
-        h2.onclick = function () {
-          h2.innerHTML.style.color = randomColor;
-        };
-        console.log(randomColor);
-      };
+      // const changeColorWithRandom = function () {
+      //   let randomColor = Math.floor(Math.random() * 16777215).toString(16);
+      //   const h2 = document.querySelector("h2");
+      //   h2.onclick = function () {
+      //     h2.innerHTML.style.color = randomColor;
+      //   };
+      //   console.log(randomColor);
+      // };
 
-      changeColorWithRandom();
+      // changeColorWithRandom();
     </script>
   </body>
 </html>
